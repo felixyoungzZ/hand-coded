@@ -4,6 +4,7 @@ function genUniqueFnName(obj) {
   return obj.hasOwnProperty(fnName) ? genUniqueFnName(obj) : fnName;
 }
 
+// 与 apply 的实现大同小异，只是参数的传入形式不一致
 Function.prototype.myCall = function(context) {
   if(typeof this !== 'function') {
     return;
