@@ -14,6 +14,10 @@ function deepClone(obj, hash = new WeakMap()) {
     return obj;
   }
 
+  if (typeof obj === 'function') {
+    return obj;
+  }
+
   // 用 hash 记录，解决循环引用
   if (hash.has(obj)) {
     return hash.get(obj);
